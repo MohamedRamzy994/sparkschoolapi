@@ -1,0 +1,970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPARKDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetCourseGroups">
+    <Key>
+      <PropertyRef Name="Group_Id" />
+    </Key>
+    <Property Name="Group_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Crs_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetCourseGroupsInstructors">
+    <Key>
+      <PropertyRef Name="Group_Instructors_Id" />
+    </Key>
+    <Property Name="Group_Instructors_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Instructor_Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetCourseGroupsTimes">
+    <Key>
+      <PropertyRef Name="Group_Time_Id" />
+    </Key>
+    <Property Name="Group_Time_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Time" Type="datetime" Nullable="false" />
+    <Property Name="Group_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetCourseLessons">
+    <Key>
+      <PropertyRef Name="Lesson_Id" />
+    </Key>
+    <Property Name="Lesson_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Lesson_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Lesson_Duration" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Lesson_Typescript" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Lesson_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Lesson_SessionTime" Type="datetime" />
+    <Property Name="Lesson_Active" Type="bit" Nullable="false" />
+    <Property Name="Lesson_Instructor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lesson_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Lesson_Photo" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Crs_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetCourses">
+    <Key>
+      <PropertyRef Name="Crs_Id" />
+    </Key>
+    <Property Name="Crs_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Crs_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Crs_Numlessons" Type="int" Nullable="false" />
+    <Property Name="Crs_Level" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Crs_Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Crs_Photo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Crs_Duration" Type="int" />
+    <Property Name="Crs_Active" Type="bit" Nullable="false" />
+    <Property Name="Crs_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="CrsCats_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Crs_Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Crs_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Crs_Video" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetCoursesCategories">
+    <Key>
+      <PropertyRef Name="CrsCats_Id" />
+    </Key>
+    <Property Name="CrsCats_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CrsCats_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CrsCats_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="CrsCats_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CrsCats_Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetEmployees">
+    <Key>
+      <PropertyRef Name="Employee_Id" />
+    </Key>
+    <Property Name="Employee_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Employee_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Employee_Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Employee_Salary" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Employee_Active" Type="bit" Nullable="false" />
+    <Property Name="Employee_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Employee_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Employee_Photo" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetEvents">
+    <Key>
+      <PropertyRef Name="Event_Id" />
+    </Key>
+    <Property Name="Event_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Event_Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Event_Photo" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Cat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Event_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Event_Active" Type="bit" Nullable="false" />
+    <Property Name="Event_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetEventsAcception">
+    <Key>
+      <PropertyRef Name="EventAcception_Id" />
+    </Key>
+    <Property Name="EventAcception_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Event_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Staff_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetEventsCats">
+    <Key>
+      <PropertyRef Name="Cat_Id" />
+    </Key>
+    <Property Name="Cat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Cat_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Cat_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Cat_Active" Type="bit" Nullable="false" />
+    <Property Name="Cat_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetInstructors">
+    <Key>
+      <PropertyRef Name="Inst_Id" />
+    </Key>
+    <Property Name="Inst_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Inst_Fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Inst_Lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Inst_Bdate" Type="date" Nullable="false" />
+    <Property Name="Inst_Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inst_City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inst_Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inst_Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Inst_Photo" Type="nvarchar" MaxLength="250" />
+    <Property Name="Inst_Bio" Type="nvarchar" MaxLength="500" />
+    <Property Name="Inst_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="InstCat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Usr_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetInstructorsCats">
+    <Key>
+      <PropertyRef Name="InstCat_Id" />
+    </Key>
+    <Property Name="InstCat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="InstCat_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="InstCat_DateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetJobs">
+    <Key>
+      <PropertyRef Name="Job_Id" />
+    </Key>
+    <Property Name="Job_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Job_Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Job_Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Job_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Job_Photo" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Job_City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Job_Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Job_Active" Type="bit" Nullable="false" />
+    <Property Name="Job_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetJobsCategories">
+    <Key>
+      <PropertyRef Name="Cat_Id" />
+    </Key>
+    <Property Name="Cat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Cat_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Cat_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Cat_Active" Type="bit" Nullable="false" />
+    <Property Name="Cat_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetManagers">
+    <Key>
+      <PropertyRef Name="Manager_Id" />
+    </Key>
+    <Property Name="Manager_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Manager_Fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manager_Lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manager_Bdate" Type="date" Nullable="false" />
+    <Property Name="Manager_Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="Manager_City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Manager_Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="Manager_Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manager_Photo" Type="nvarchar" MaxLength="250" />
+    <Property Name="Manager_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Usr_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetNews">
+    <Key>
+      <PropertyRef Name="News_Id" />
+    </Key>
+    <Property Name="News_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="News_Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="News_Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="News_Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="News_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="News_Photo" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="News_Active" Type="bit" Nullable="false" />
+    <Property Name="News_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Cat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetNewsAcception">
+    <Key>
+      <PropertyRef Name="NewsAcception_Id" />
+    </Key>
+    <Property Name="NewsAcception_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="News_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Staff_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetNewsCategories">
+    <Key>
+      <PropertyRef Name="Cat_Id" />
+    </Key>
+    <Property Name="Cat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Cat_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Cat_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Cat_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Cat_Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetProgrameCourseGroups">
+    <Key>
+      <PropertyRef Name="Group_Id" />
+    </Key>
+    <Property Name="Group_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Crs_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetProgrameCourseGroupsInstructors">
+    <Key>
+      <PropertyRef Name="Group_Instructors_Id" />
+    </Key>
+    <Property Name="Group_Instructors_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Instructor_Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetProgrameCourseGroupsTimes">
+    <Key>
+      <PropertyRef Name="Group_Time_Id" />
+    </Key>
+    <Property Name="Group_Time_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Group_Time" Type="datetime" Nullable="false" />
+    <Property Name="Group_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetProgrameCourses">
+    <Key>
+      <PropertyRef Name="Crs_Id" />
+    </Key>
+    <Property Name="Crs_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Crs_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Crs_Numlessons" Type="int" Nullable="false" />
+    <Property Name="Crs_Level" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Crs_Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Crs_Photo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Crs_Duration" Type="int" />
+    <Property Name="Crs_Active" Type="bit" Nullable="false" />
+    <Property Name="Crs_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="CrsCats_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Crs_Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Crs_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Crs_Video" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Programe_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetProgrameCoursesInstructors">
+    <Key>
+      <PropertyRef Name="ProgrameCoursesInst_Id" />
+    </Key>
+    <Property Name="ProgrameCoursesInst_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProgrameCoursesInst_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProgrameCoursesInst_Cat" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProgrameCoursesInst_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="ProgrameCourses_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetProgrameCoursesLessons">
+    <Key>
+      <PropertyRef Name="ProgrameCoursesLesson_Id" />
+    </Key>
+    <Property Name="ProgrameCoursesLesson_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProgrameCoursesLesson_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ProgrameCoursesLesson_Duration" Type="int" Nullable="false" />
+    <Property Name="ProgrameCoursesLesson_Typescript" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ProgrameCoursesLesson_Vintro" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ProgrameCoursesLesson_VideoFull" Type="nvarchar" MaxLength="250" />
+    <Property Name="ProgrameCoursesLesson_StartDate" Type="datetime" Nullable="false" />
+    <Property Name="ProgrameCoursesLesson_SessionTime" Type="time" Precision="7" />
+    <Property Name="ProgrameCoursesLesson_Active" Type="bit" Nullable="false" />
+    <Property Name="ProgrameCoursesLesson_Instructor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProgrameCoursesLesson_Photo" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ProgrameCourses_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetProgrames">
+    <Key>
+      <PropertyRef Name="Programe_Id" />
+    </Key>
+    <Property Name="Programe_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Programe_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Programe_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Programe_NumCourses" Type="int" Nullable="false" />
+    <Property Name="Programe_Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Programe_StartDateTime" Type="datetime" Nullable="false" />
+    <Property Name="Programe_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Programe_Photo" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Cat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Programe_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Programe_Active" Type="bit" Nullable="false" />
+    <Property Name="Programe_Duration" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetProgrammesCategories">
+    <Key>
+      <PropertyRef Name="Cat_Id" />
+    </Key>
+    <Property Name="Cat_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Cat_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Cat_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Cat_Publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Cat_Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetStudents">
+    <Key>
+      <PropertyRef Name="Stu_Id" />
+    </Key>
+    <Property Name="Stu_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Stu_Fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stu_Lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stu_Bdate" Type="date" Nullable="false" />
+    <Property Name="Stu_Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stu_City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stu_Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stu_Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stu_Photo" Type="nvarchar" MaxLength="250" />
+    <Property Name="Stu_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Usr_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_AspNetCourseGroups_AspNetCourseGroups">
+    <End Role="AspNetCourses" Type="Self.AspNetCourses" Multiplicity="1" />
+    <End Role="AspNetCourseGroups" Type="Self.AspNetCourseGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetCourses">
+        <PropertyRef Name="Crs_Id" />
+      </Principal>
+      <Dependent Role="AspNetCourseGroups">
+        <PropertyRef Name="Crs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetCourseGroupsInstructors_AspNetCourseGroups">
+    <End Role="AspNetCourseGroups" Type="Self.AspNetCourseGroups" Multiplicity="1" />
+    <End Role="AspNetCourseGroupsInstructors" Type="Self.AspNetCourseGroupsInstructors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetCourseGroups">
+        <PropertyRef Name="Group_Id" />
+      </Principal>
+      <Dependent Role="AspNetCourseGroupsInstructors">
+        <PropertyRef Name="Group_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetCourseGroupsTimes_AspNetCourseGroups">
+    <End Role="AspNetCourseGroups" Type="Self.AspNetCourseGroups" Multiplicity="1" />
+    <End Role="AspNetCourseGroupsTimes" Type="Self.AspNetCourseGroupsTimes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetCourseGroups">
+        <PropertyRef Name="Group_Id" />
+      </Principal>
+      <Dependent Role="AspNetCourseGroupsTimes">
+        <PropertyRef Name="Group_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetCourseLessons_AspNetCourses">
+    <End Role="AspNetCourses" Type="Self.AspNetCourses" Multiplicity="1" />
+    <End Role="AspNetCourseLessons" Type="Self.AspNetCourseLessons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetCourses">
+        <PropertyRef Name="Crs_Id" />
+      </Principal>
+      <Dependent Role="AspNetCourseLessons">
+        <PropertyRef Name="Crs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetCourseLessons_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetCourseLessons" Type="Self.AspNetCourseLessons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetCourseLessons">
+        <PropertyRef Name="Lesson_Publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetCourses_AspNetCoursesCategories">
+    <End Role="AspNetCoursesCategories" Type="Self.AspNetCoursesCategories" Multiplicity="1" />
+    <End Role="AspNetCourses" Type="Self.AspNetCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetCoursesCategories">
+        <PropertyRef Name="CrsCats_Id" />
+      </Principal>
+      <Dependent Role="AspNetCourses">
+        <PropertyRef Name="CrsCats_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetCourses_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetCourses" Type="Self.AspNetCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetCourses">
+        <PropertyRef Name="Crs_Publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetCoursesCategories_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetCoursesCategories" Type="Self.AspNetCoursesCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetCoursesCategories">
+        <PropertyRef Name="CrsCats_Publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetEmployees_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetEmployees" Type="Self.AspNetEmployees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetEmployees">
+        <PropertyRef Name="Employee_Publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetEvents_AspNetEventsCats">
+    <End Role="AspNetEventsCats" Type="Self.AspNetEventsCats" Multiplicity="1" />
+    <End Role="AspNetEvents" Type="Self.AspNetEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetEventsCats">
+        <PropertyRef Name="Cat_Id" />
+      </Principal>
+      <Dependent Role="AspNetEvents">
+        <PropertyRef Name="Cat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetEvents_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetEvents" Type="Self.AspNetEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetEvents">
+        <PropertyRef Name="Event_Publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetEventsAcception_AspNetEvents">
+    <End Role="AspNetEvents" Type="Self.AspNetEvents" Multiplicity="1" />
+    <End Role="AspNetEventsAcception" Type="Self.AspNetEventsAcception" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetEvents">
+        <PropertyRef Name="Event_Id" />
+      </Principal>
+      <Dependent Role="AspNetEventsAcception">
+        <PropertyRef Name="Event_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetInstructors_AspNetInstructorsCats">
+    <End Role="AspNetInstructorsCats" Type="Self.AspNetInstructorsCats" Multiplicity="1" />
+    <End Role="AspNetInstructors" Type="Self.AspNetInstructors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetInstructorsCats">
+        <PropertyRef Name="InstCat_Id" />
+      </Principal>
+      <Dependent Role="AspNetInstructors">
+        <PropertyRef Name="InstCat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetJobs_AspNetJobsCategories">
+    <End Role="AspNetJobsCategories" Type="Self.AspNetJobsCategories" Multiplicity="1" />
+    <End Role="AspNetJobs" Type="Self.AspNetJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetJobsCategories">
+        <PropertyRef Name="Cat_Id" />
+      </Principal>
+      <Dependent Role="AspNetJobs">
+        <PropertyRef Name="Cat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetJobs_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetJobs" Type="Self.AspNetJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetJobs">
+        <PropertyRef Name="Job_Publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetManagers_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetManagers" Type="Self.AspNetManagers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetManagers">
+        <PropertyRef Name="Usr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetNews_AspNetNews">
+    <End Role="AspNetNews" Type="Self.AspNetNews" Multiplicity="1" />
+    <End Role="AspNetNews1" Type="Self.AspNetNews" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetNews">
+        <PropertyRef Name="News_Id" />
+      </Principal>
+      <Dependent Role="AspNetNews1">
+        <PropertyRef Name="News_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetNews_AspNetNewsCategories">
+    <End Role="AspNetNewsCategories" Type="Self.AspNetNewsCategories" Multiplicity="1" />
+    <End Role="AspNetNews" Type="Self.AspNetNews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetNewsCategories">
+        <PropertyRef Name="Cat_Id" />
+      </Principal>
+      <Dependent Role="AspNetNews">
+        <PropertyRef Name="Cat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetProgrameCourseGroups_AspNetProgrameCourses">
+    <End Role="AspNetProgrameCourses" Type="Self.AspNetProgrameCourses" Multiplicity="1" />
+    <End Role="AspNetProgrameCourseGroups" Type="Self.AspNetProgrameCourseGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetProgrameCourses">
+        <PropertyRef Name="Crs_Id" />
+      </Principal>
+      <Dependent Role="AspNetProgrameCourseGroups">
+        <PropertyRef Name="Crs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetProgrameCourseGroupsInstructors_AspNetProgrameCourseGroups">
+    <End Role="AspNetProgrameCourseGroups" Type="Self.AspNetProgrameCourseGroups" Multiplicity="1" />
+    <End Role="AspNetProgrameCourseGroupsInstructors" Type="Self.AspNetProgrameCourseGroupsInstructors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetProgrameCourseGroups">
+        <PropertyRef Name="Group_Id" />
+      </Principal>
+      <Dependent Role="AspNetProgrameCourseGroupsInstructors">
+        <PropertyRef Name="Group_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetProgrameCourseGroupsTimes_AspNetProgrameCourseGroups">
+    <End Role="AspNetProgrameCourseGroups" Type="Self.AspNetProgrameCourseGroups" Multiplicity="1" />
+    <End Role="AspNetProgrameCourseGroupsTimes" Type="Self.AspNetProgrameCourseGroupsTimes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetProgrameCourseGroups">
+        <PropertyRef Name="Group_Id" />
+      </Principal>
+      <Dependent Role="AspNetProgrameCourseGroupsTimes">
+        <PropertyRef Name="Group_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetProgrameCourses_AspNetCoursesCategories">
+    <End Role="AspNetCoursesCategories" Type="Self.AspNetCoursesCategories" Multiplicity="1" />
+    <End Role="AspNetProgrameCourses" Type="Self.AspNetProgrameCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetCoursesCategories">
+        <PropertyRef Name="CrsCats_Id" />
+      </Principal>
+      <Dependent Role="AspNetProgrameCourses">
+        <PropertyRef Name="CrsCats_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetProgrameCourses_AspNetProgrames">
+    <End Role="AspNetProgrames" Type="Self.AspNetProgrames" Multiplicity="1" />
+    <End Role="AspNetProgrameCourses" Type="Self.AspNetProgrameCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetProgrames">
+        <PropertyRef Name="Programe_Id" />
+      </Principal>
+      <Dependent Role="AspNetProgrameCourses">
+        <PropertyRef Name="Programe_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetProgrames_AspNetProgrames">
+    <End Role="AspNetProgrames" Type="Self.AspNetProgrames" Multiplicity="1" />
+    <End Role="AspNetProgrames1" Type="Self.AspNetProgrames" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetProgrames">
+        <PropertyRef Name="Programe_Id" />
+      </Principal>
+      <Dependent Role="AspNetProgrames1">
+        <PropertyRef Name="Programe_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetProgrames_AspNetProgrammesCategories">
+    <End Role="AspNetProgrammesCategories" Type="Self.AspNetProgrammesCategories" Multiplicity="1" />
+    <End Role="AspNetProgrames" Type="Self.AspNetProgrames" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetProgrammesCategories">
+        <PropertyRef Name="Cat_Id" />
+      </Principal>
+      <Dependent Role="AspNetProgrames">
+        <PropertyRef Name="Cat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetProgrammesCategories_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetProgrammesCategories" Type="Self.AspNetProgrammesCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetProgrammesCategories">
+        <PropertyRef Name="Cat_Publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetStudents_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetStudents" Type="Self.AspNetStudents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetStudents">
+        <PropertyRef Name="Usr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="SPARKDBModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetCourseGroups" EntityType="Self.AspNetCourseGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetCourseGroupsInstructors" EntityType="Self.AspNetCourseGroupsInstructors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetCourseGroupsTimes" EntityType="Self.AspNetCourseGroupsTimes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetCourseLessons" EntityType="Self.AspNetCourseLessons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetCourses" EntityType="Self.AspNetCourses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetCoursesCategories" EntityType="Self.AspNetCoursesCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetEmployees" EntityType="Self.AspNetEmployees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetEvents" EntityType="Self.AspNetEvents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetEventsAcception" EntityType="Self.AspNetEventsAcception" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetEventsCats" EntityType="Self.AspNetEventsCats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetInstructors" EntityType="Self.AspNetInstructors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetInstructorsCats" EntityType="Self.AspNetInstructorsCats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetJobs" EntityType="Self.AspNetJobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetJobsCategories" EntityType="Self.AspNetJobsCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetManagers" EntityType="Self.AspNetManagers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetNews" EntityType="Self.AspNetNews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetNewsAcception" EntityType="Self.AspNetNewsAcception" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetNewsCategories" EntityType="Self.AspNetNewsCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetProgrameCourseGroups" EntityType="Self.AspNetProgrameCourseGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetProgrameCourseGroupsInstructors" EntityType="Self.AspNetProgrameCourseGroupsInstructors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetProgrameCourseGroupsTimes" EntityType="Self.AspNetProgrameCourseGroupsTimes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetProgrameCourses" EntityType="Self.AspNetProgrameCourses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetProgrameCoursesInstructors" EntityType="Self.AspNetProgrameCoursesInstructors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetProgrameCoursesLessons" EntityType="Self.AspNetProgrameCoursesLessons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetProgrames" EntityType="Self.AspNetProgrames" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetProgrammesCategories" EntityType="Self.AspNetProgrammesCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetStudents" EntityType="Self.AspNetStudents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AspNetCourseGroups_AspNetCourseGroups" Association="Self.FK_AspNetCourseGroups_AspNetCourseGroups">
+      <End Role="AspNetCourses" EntitySet="AspNetCourses" />
+      <End Role="AspNetCourseGroups" EntitySet="AspNetCourseGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetCourseGroupsInstructors_AspNetCourseGroups" Association="Self.FK_AspNetCourseGroupsInstructors_AspNetCourseGroups">
+      <End Role="AspNetCourseGroups" EntitySet="AspNetCourseGroups" />
+      <End Role="AspNetCourseGroupsInstructors" EntitySet="AspNetCourseGroupsInstructors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetCourseGroupsTimes_AspNetCourseGroups" Association="Self.FK_AspNetCourseGroupsTimes_AspNetCourseGroups">
+      <End Role="AspNetCourseGroups" EntitySet="AspNetCourseGroups" />
+      <End Role="AspNetCourseGroupsTimes" EntitySet="AspNetCourseGroupsTimes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetCourseLessons_AspNetCourses" Association="Self.FK_AspNetCourseLessons_AspNetCourses">
+      <End Role="AspNetCourses" EntitySet="AspNetCourses" />
+      <End Role="AspNetCourseLessons" EntitySet="AspNetCourseLessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetCourseLessons_AspNetUsers" Association="Self.FK_AspNetCourseLessons_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetCourseLessons" EntitySet="AspNetCourseLessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetCourses_AspNetCoursesCategories" Association="Self.FK_AspNetCourses_AspNetCoursesCategories">
+      <End Role="AspNetCoursesCategories" EntitySet="AspNetCoursesCategories" />
+      <End Role="AspNetCourses" EntitySet="AspNetCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetCourses_AspNetUsers" Association="Self.FK_AspNetCourses_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetCourses" EntitySet="AspNetCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetCoursesCategories_AspNetUsers" Association="Self.FK_AspNetCoursesCategories_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetCoursesCategories" EntitySet="AspNetCoursesCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetEmployees_AspNetUsers" Association="Self.FK_AspNetEmployees_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetEmployees" EntitySet="AspNetEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetEvents_AspNetEventsCats" Association="Self.FK_AspNetEvents_AspNetEventsCats">
+      <End Role="AspNetEventsCats" EntitySet="AspNetEventsCats" />
+      <End Role="AspNetEvents" EntitySet="AspNetEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetEvents_AspNetUsers" Association="Self.FK_AspNetEvents_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetEvents" EntitySet="AspNetEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetEventsAcception_AspNetEvents" Association="Self.FK_AspNetEventsAcception_AspNetEvents">
+      <End Role="AspNetEvents" EntitySet="AspNetEvents" />
+      <End Role="AspNetEventsAcception" EntitySet="AspNetEventsAcception" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetInstructors_AspNetInstructorsCats" Association="Self.FK_AspNetInstructors_AspNetInstructorsCats">
+      <End Role="AspNetInstructorsCats" EntitySet="AspNetInstructorsCats" />
+      <End Role="AspNetInstructors" EntitySet="AspNetInstructors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetJobs_AspNetJobsCategories" Association="Self.FK_AspNetJobs_AspNetJobsCategories">
+      <End Role="AspNetJobsCategories" EntitySet="AspNetJobsCategories" />
+      <End Role="AspNetJobs" EntitySet="AspNetJobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetJobs_AspNetUsers" Association="Self.FK_AspNetJobs_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetJobs" EntitySet="AspNetJobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetManagers_AspNetUsers" Association="Self.FK_AspNetManagers_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetManagers" EntitySet="AspNetManagers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetNews_AspNetNews" Association="Self.FK_AspNetNews_AspNetNews">
+      <End Role="AspNetNews" EntitySet="AspNetNews" />
+      <End Role="AspNetNews1" EntitySet="AspNetNews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetNews_AspNetNewsCategories" Association="Self.FK_AspNetNews_AspNetNewsCategories">
+      <End Role="AspNetNewsCategories" EntitySet="AspNetNewsCategories" />
+      <End Role="AspNetNews" EntitySet="AspNetNews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetProgrameCourseGroups_AspNetProgrameCourses" Association="Self.FK_AspNetProgrameCourseGroups_AspNetProgrameCourses">
+      <End Role="AspNetProgrameCourses" EntitySet="AspNetProgrameCourses" />
+      <End Role="AspNetProgrameCourseGroups" EntitySet="AspNetProgrameCourseGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetProgrameCourseGroupsInstructors_AspNetProgrameCourseGroups" Association="Self.FK_AspNetProgrameCourseGroupsInstructors_AspNetProgrameCourseGroups">
+      <End Role="AspNetProgrameCourseGroups" EntitySet="AspNetProgrameCourseGroups" />
+      <End Role="AspNetProgrameCourseGroupsInstructors" EntitySet="AspNetProgrameCourseGroupsInstructors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetProgrameCourseGroupsTimes_AspNetProgrameCourseGroups" Association="Self.FK_AspNetProgrameCourseGroupsTimes_AspNetProgrameCourseGroups">
+      <End Role="AspNetProgrameCourseGroups" EntitySet="AspNetProgrameCourseGroups" />
+      <End Role="AspNetProgrameCourseGroupsTimes" EntitySet="AspNetProgrameCourseGroupsTimes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetProgrameCourses_AspNetCoursesCategories" Association="Self.FK_AspNetProgrameCourses_AspNetCoursesCategories">
+      <End Role="AspNetCoursesCategories" EntitySet="AspNetCoursesCategories" />
+      <End Role="AspNetProgrameCourses" EntitySet="AspNetProgrameCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetProgrameCourses_AspNetProgrames" Association="Self.FK_AspNetProgrameCourses_AspNetProgrames">
+      <End Role="AspNetProgrames" EntitySet="AspNetProgrames" />
+      <End Role="AspNetProgrameCourses" EntitySet="AspNetProgrameCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetProgrames_AspNetProgrames" Association="Self.FK_AspNetProgrames_AspNetProgrames">
+      <End Role="AspNetProgrames" EntitySet="AspNetProgrames" />
+      <End Role="AspNetProgrames1" EntitySet="AspNetProgrames" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetProgrames_AspNetProgrammesCategories" Association="Self.FK_AspNetProgrames_AspNetProgrammesCategories">
+      <End Role="AspNetProgrammesCategories" EntitySet="AspNetProgrammesCategories" />
+      <End Role="AspNetProgrames" EntitySet="AspNetProgrames" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetProgrammesCategories_AspNetUsers" Association="Self.FK_AspNetProgrammesCategories_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetProgrammesCategories" EntitySet="AspNetProgrammesCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetStudents_AspNetUsers" Association="Self.FK_AspNetStudents_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetStudents" EntitySet="AspNetStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

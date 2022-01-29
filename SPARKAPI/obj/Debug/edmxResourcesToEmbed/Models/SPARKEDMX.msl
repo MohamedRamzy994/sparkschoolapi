@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SPARKDBModelStoreContainer" CdmEntityContainer="SPARKEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="SPARKDBModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetCourseGroups">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetCourseGroup">
+        <MappingFragment StoreEntitySet="AspNetCourseGroups">
+          <ScalarProperty Name="Group_Id" ColumnName="Group_Id" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="Crs_Id" ColumnName="Crs_Id" />
+          <ScalarProperty Name="Group_Active" ColumnName="Group_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetCourseGroupsInstructors">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetCourseGroupsInstructor">
+        <MappingFragment StoreEntitySet="AspNetCourseGroupsInstructors">
+          <ScalarProperty Name="Group_Instructors_Id" ColumnName="Group_Instructors_Id" />
+          <ScalarProperty Name="Group_Id" ColumnName="Group_Id" />
+          <ScalarProperty Name="Group_Instructor_Name" ColumnName="Group_Instructor_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetCourseGroupsTimes">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetCourseGroupsTime">
+        <MappingFragment StoreEntitySet="AspNetCourseGroupsTimes">
+          <ScalarProperty Name="Group_Time_Id" ColumnName="Group_Time_Id" />
+          <ScalarProperty Name="Group_Time" ColumnName="Group_Time" />
+          <ScalarProperty Name="Group_Id" ColumnName="Group_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetCourseLessons">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetCourseLesson">
+        <MappingFragment StoreEntitySet="AspNetCourseLessons">
+          <ScalarProperty Name="Lesson_Id" ColumnName="Lesson_Id" />
+          <ScalarProperty Name="Lesson_Name" ColumnName="Lesson_Name" />
+          <ScalarProperty Name="Lesson_Duration" ColumnName="Lesson_Duration" />
+          <ScalarProperty Name="Lesson_Typescript" ColumnName="Lesson_Typescript" />
+          <ScalarProperty Name="Lesson_DateTime" ColumnName="Lesson_DateTime" />
+          <ScalarProperty Name="Lesson_SessionTime" ColumnName="Lesson_SessionTime" />
+          <ScalarProperty Name="Lesson_Active" ColumnName="Lesson_Active" />
+          <ScalarProperty Name="Lesson_Instructor" ColumnName="Lesson_Instructor" />
+          <ScalarProperty Name="Lesson_Publisher" ColumnName="Lesson_Publisher" />
+          <ScalarProperty Name="Lesson_Photo" ColumnName="Lesson_Photo" />
+          <ScalarProperty Name="Crs_Id" ColumnName="Crs_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetCourses">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetCours">
+        <MappingFragment StoreEntitySet="AspNetCourses">
+          <ScalarProperty Name="Crs_Id" ColumnName="Crs_Id" />
+          <ScalarProperty Name="Crs_Name" ColumnName="Crs_Name" />
+          <ScalarProperty Name="Crs_Numlessons" ColumnName="Crs_Numlessons" />
+          <ScalarProperty Name="Crs_Level" ColumnName="Crs_Level" />
+          <ScalarProperty Name="Crs_Description" ColumnName="Crs_Description" />
+          <ScalarProperty Name="Crs_Photo" ColumnName="Crs_Photo" />
+          <ScalarProperty Name="Crs_Duration" ColumnName="Crs_Duration" />
+          <ScalarProperty Name="Crs_Active" ColumnName="Crs_Active" />
+          <ScalarProperty Name="Crs_DateTime" ColumnName="Crs_DateTime" />
+          <ScalarProperty Name="CrsCats_Id" ColumnName="CrsCats_Id" />
+          <ScalarProperty Name="Crs_Price" ColumnName="Crs_Price" />
+          <ScalarProperty Name="Crs_Publisher" ColumnName="Crs_Publisher" />
+          <ScalarProperty Name="Crs_Video" ColumnName="Crs_Video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetCoursesCategories">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetCoursesCategory">
+        <MappingFragment StoreEntitySet="AspNetCoursesCategories">
+          <ScalarProperty Name="CrsCats_Id" ColumnName="CrsCats_Id" />
+          <ScalarProperty Name="CrsCats_Name" ColumnName="CrsCats_Name" />
+          <ScalarProperty Name="CrsCats_DateTime" ColumnName="CrsCats_DateTime" />
+          <ScalarProperty Name="CrsCats_Publisher" ColumnName="CrsCats_Publisher" />
+          <ScalarProperty Name="CrsCats_Active" ColumnName="CrsCats_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetEvents">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetEvent">
+        <MappingFragment StoreEntitySet="AspNetEvents">
+          <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+          <ScalarProperty Name="Event_Title" ColumnName="Event_Title" />
+          <ScalarProperty Name="Event_Photo" ColumnName="Event_Photo" />
+          <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+          <ScalarProperty Name="Event_DateTime" ColumnName="Event_DateTime" />
+          <ScalarProperty Name="Event_Active" ColumnName="Event_Active" />
+          <ScalarProperty Name="Event_Publisher" ColumnName="Event_Publisher" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetEventsAcceptions">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetEventsAcception">
+        <MappingFragment StoreEntitySet="AspNetEventsAcception">
+          <ScalarProperty Name="EventAcception_Id" ColumnName="EventAcception_Id" />
+          <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+          <ScalarProperty Name="Staff_Id" ColumnName="Staff_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetEventsCats">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetEventsCat">
+        <MappingFragment StoreEntitySet="AspNetEventsCats">
+          <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+          <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+          <ScalarProperty Name="Cat_DateTime" ColumnName="Cat_DateTime" />
+          <ScalarProperty Name="Cat_Active" ColumnName="Cat_Active" />
+          <ScalarProperty Name="Cat_Publisher" ColumnName="Cat_Publisher" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetInstructors">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetInstructor">
+        <MappingFragment StoreEntitySet="AspNetInstructors">
+          <ScalarProperty Name="Inst_Id" ColumnName="Inst_Id" />
+          <ScalarProperty Name="Inst_Fname" ColumnName="Inst_Fname" />
+          <ScalarProperty Name="Inst_Lname" ColumnName="Inst_Lname" />
+          <ScalarProperty Name="Inst_Bdate" ColumnName="Inst_Bdate" />
+          <ScalarProperty Name="Inst_Street" ColumnName="Inst_Street" />
+          <ScalarProperty Name="Inst_City" ColumnName="Inst_City" />
+          <ScalarProperty Name="Inst_Country" ColumnName="Inst_Country" />
+          <ScalarProperty Name="Inst_Gender" ColumnName="Inst_Gender" />
+          <ScalarProperty Name="Inst_Photo" ColumnName="Inst_Photo" />
+          <ScalarProperty Name="Inst_Bio" ColumnName="Inst_Bio" />
+          <ScalarProperty Name="Inst_DateTime" ColumnName="Inst_DateTime" />
+          <ScalarProperty Name="InstCat_Id" ColumnName="InstCat_Id" />
+          <ScalarProperty Name="Usr_Id" ColumnName="Usr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetInstructorsCats">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetInstructorsCat">
+        <MappingFragment StoreEntitySet="AspNetInstructorsCats">
+          <ScalarProperty Name="InstCat_Id" ColumnName="InstCat_Id" />
+          <ScalarProperty Name="InstCat_Name" ColumnName="InstCat_Name" />
+          <ScalarProperty Name="InstCat_DateTime" ColumnName="InstCat_DateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetJobs">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetJob">
+        <MappingFragment StoreEntitySet="AspNetJobs">
+          <ScalarProperty Name="Job_Publisher" ColumnName="Job_Publisher" />
+          <ScalarProperty Name="Job_Active" ColumnName="Job_Active" />
+          <ScalarProperty Name="Job_Id" ColumnName="Job_Id" />
+          <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
+          <ScalarProperty Name="Job_Description" ColumnName="Job_Description" />
+          <ScalarProperty Name="Job_DateTime" ColumnName="Job_DateTime" />
+          <ScalarProperty Name="Job_Photo" ColumnName="Job_Photo" />
+          <ScalarProperty Name="Job_City" ColumnName="Job_City" />
+          <ScalarProperty Name="Job_Country" ColumnName="Job_Country" />
+          <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetJobsCategories">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetJobsCategory">
+        <MappingFragment StoreEntitySet="AspNetJobsCategories">
+          <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+          <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+          <ScalarProperty Name="Cat_DateTime" ColumnName="Cat_DateTime" />
+          <ScalarProperty Name="Cat_Active" ColumnName="Cat_Active" />
+          <ScalarProperty Name="Cat_Publisher" ColumnName="Cat_Publisher" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetManagers">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetManager">
+        <MappingFragment StoreEntitySet="AspNetManagers">
+          <ScalarProperty Name="Manager_Id" ColumnName="Manager_Id" />
+          <ScalarProperty Name="Manager_Fname" ColumnName="Manager_Fname" />
+          <ScalarProperty Name="Manager_Lname" ColumnName="Manager_Lname" />
+          <ScalarProperty Name="Manager_Bdate" ColumnName="Manager_Bdate" />
+          <ScalarProperty Name="Manager_Street" ColumnName="Manager_Street" />
+          <ScalarProperty Name="Manager_City" ColumnName="Manager_City" />
+          <ScalarProperty Name="Manager_Country" ColumnName="Manager_Country" />
+          <ScalarProperty Name="Manager_Gender" ColumnName="Manager_Gender" />
+          <ScalarProperty Name="Manager_Photo" ColumnName="Manager_Photo" />
+          <ScalarProperty Name="Manager_DateTime" ColumnName="Manager_DateTime" />
+          <ScalarProperty Name="Usr_Id" ColumnName="Usr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetNews">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetNew">
+        <MappingFragment StoreEntitySet="AspNetNews">
+          <ScalarProperty Name="News_Id" ColumnName="News_Id" />
+          <ScalarProperty Name="News_Title" ColumnName="News_Title" />
+          <ScalarProperty Name="News_Description" ColumnName="News_Description" />
+          <ScalarProperty Name="News_Content" ColumnName="News_Content" />
+          <ScalarProperty Name="News_DateTime" ColumnName="News_DateTime" />
+          <ScalarProperty Name="News_Photo" ColumnName="News_Photo" />
+          <ScalarProperty Name="News_Active" ColumnName="News_Active" />
+          <ScalarProperty Name="News_Publisher" ColumnName="News_Publisher" />
+          <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetNewsAcceptions">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetNewsAcception">
+        <MappingFragment StoreEntitySet="AspNetNewsAcception">
+          <ScalarProperty Name="NewsAcception_Id" ColumnName="NewsAcception_Id" />
+          <ScalarProperty Name="News_Id" ColumnName="News_Id" />
+          <ScalarProperty Name="Staff_Id" ColumnName="Staff_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetNewsCategories">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetNewsCategory">
+        <MappingFragment StoreEntitySet="AspNetNewsCategories">
+          <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+          <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+          <ScalarProperty Name="Cat_DateTime" ColumnName="Cat_DateTime" />
+          <ScalarProperty Name="Cat_Publisher" ColumnName="Cat_Publisher" />
+          <ScalarProperty Name="Cat_Active" ColumnName="Cat_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetProgrameCourseGroups">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetProgrameCourseGroup">
+        <MappingFragment StoreEntitySet="AspNetProgrameCourseGroups">
+          <ScalarProperty Name="Group_Id" ColumnName="Group_Id" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="Crs_Id" ColumnName="Crs_Id" />
+          <ScalarProperty Name="Group_Active" ColumnName="Group_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetProgrameCourseGroupsInstructors">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetProgrameCourseGroupsInstructor">
+        <MappingFragment StoreEntitySet="AspNetProgrameCourseGroupsInstructors">
+          <ScalarProperty Name="Group_Instructors_Id" ColumnName="Group_Instructors_Id" />
+          <ScalarProperty Name="Group_Id" ColumnName="Group_Id" />
+          <ScalarProperty Name="Group_Instructor_Name" ColumnName="Group_Instructor_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetProgrameCourseGroupsTimes">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetProgrameCourseGroupsTime">
+        <MappingFragment StoreEntitySet="AspNetProgrameCourseGroupsTimes">
+          <ScalarProperty Name="Group_Time_Id" ColumnName="Group_Time_Id" />
+          <ScalarProperty Name="Group_Time" ColumnName="Group_Time" />
+          <ScalarProperty Name="Group_Id" ColumnName="Group_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetProgrameCourses">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetProgrameCours">
+        <MappingFragment StoreEntitySet="AspNetProgrameCourses">
+          <ScalarProperty Name="Crs_Id" ColumnName="Crs_Id" />
+          <ScalarProperty Name="Crs_Name" ColumnName="Crs_Name" />
+          <ScalarProperty Name="Crs_Numlessons" ColumnName="Crs_Numlessons" />
+          <ScalarProperty Name="Crs_Level" ColumnName="Crs_Level" />
+          <ScalarProperty Name="Crs_Description" ColumnName="Crs_Description" />
+          <ScalarProperty Name="Crs_Photo" ColumnName="Crs_Photo" />
+          <ScalarProperty Name="Crs_Duration" ColumnName="Crs_Duration" />
+          <ScalarProperty Name="Crs_Active" ColumnName="Crs_Active" />
+          <ScalarProperty Name="Crs_DateTime" ColumnName="Crs_DateTime" />
+          <ScalarProperty Name="CrsCats_Id" ColumnName="CrsCats_Id" />
+          <ScalarProperty Name="Crs_Price" ColumnName="Crs_Price" />
+          <ScalarProperty Name="Crs_Publisher" ColumnName="Crs_Publisher" />
+          <ScalarProperty Name="Crs_Video" ColumnName="Crs_Video" />
+          <ScalarProperty Name="Programe_Id" ColumnName="Programe_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetProgrameCoursesInstructors">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetProgrameCoursesInstructor">
+        <MappingFragment StoreEntitySet="AspNetProgrameCoursesInstructors">
+          <ScalarProperty Name="ProgrameCoursesInst_Id" ColumnName="ProgrameCoursesInst_Id" />
+          <ScalarProperty Name="ProgrameCoursesInst_Name" ColumnName="ProgrameCoursesInst_Name" />
+          <ScalarProperty Name="ProgrameCoursesInst_Cat" ColumnName="ProgrameCoursesInst_Cat" />
+          <ScalarProperty Name="ProgrameCoursesInst_DateTime" ColumnName="ProgrameCoursesInst_DateTime" />
+          <ScalarProperty Name="ProgrameCourses_Id" ColumnName="ProgrameCourses_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetProgrameCoursesLessons">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetProgrameCoursesLesson">
+        <MappingFragment StoreEntitySet="AspNetProgrameCoursesLessons">
+          <ScalarProperty Name="ProgrameCoursesLesson_Id" ColumnName="ProgrameCoursesLesson_Id" />
+          <ScalarProperty Name="ProgrameCoursesLesson_Name" ColumnName="ProgrameCoursesLesson_Name" />
+          <ScalarProperty Name="ProgrameCoursesLesson_Duration" ColumnName="ProgrameCoursesLesson_Duration" />
+          <ScalarProperty Name="ProgrameCoursesLesson_Typescript" ColumnName="ProgrameCoursesLesson_Typescript" />
+          <ScalarProperty Name="ProgrameCoursesLesson_Vintro" ColumnName="ProgrameCoursesLesson_Vintro" />
+          <ScalarProperty Name="ProgrameCoursesLesson_VideoFull" ColumnName="ProgrameCoursesLesson_VideoFull" />
+          <ScalarProperty Name="ProgrameCoursesLesson_StartDate" ColumnName="ProgrameCoursesLesson_StartDate" />
+          <ScalarProperty Name="ProgrameCoursesLesson_SessionTime" ColumnName="ProgrameCoursesLesson_SessionTime" />
+          <ScalarProperty Name="ProgrameCoursesLesson_Active" ColumnName="ProgrameCoursesLesson_Active" />
+          <ScalarProperty Name="ProgrameCoursesLesson_Instructor" ColumnName="ProgrameCoursesLesson_Instructor" />
+          <ScalarProperty Name="ProgrameCoursesLesson_Photo" ColumnName="ProgrameCoursesLesson_Photo" />
+          <ScalarProperty Name="ProgrameCourses_Id" ColumnName="ProgrameCourses_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetProgrames">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetPrograme">
+        <MappingFragment StoreEntitySet="AspNetProgrames">
+          <ScalarProperty Name="Programe_Id" ColumnName="Programe_Id" />
+          <ScalarProperty Name="Programe_Name" ColumnName="Programe_Name" />
+          <ScalarProperty Name="Programe_Description" ColumnName="Programe_Description" />
+          <ScalarProperty Name="Programe_NumCourses" ColumnName="Programe_NumCourses" />
+          <ScalarProperty Name="Programe_Price" ColumnName="Programe_Price" />
+          <ScalarProperty Name="Programe_StartDateTime" ColumnName="Programe_StartDateTime" />
+          <ScalarProperty Name="Programe_DateTime" ColumnName="Programe_DateTime" />
+          <ScalarProperty Name="Programe_Photo" ColumnName="Programe_Photo" />
+          <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+          <ScalarProperty Name="Programe_Publisher" ColumnName="Programe_Publisher" />
+          <ScalarProperty Name="Programe_Active" ColumnName="Programe_Active" />
+          <ScalarProperty Name="Programe_Duration" ColumnName="Programe_Duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetProgrammesCategories">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetProgrammesCategory">
+        <MappingFragment StoreEntitySet="AspNetProgrammesCategories">
+          <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+          <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+          <ScalarProperty Name="Cat_DateTime" ColumnName="Cat_DateTime" />
+          <ScalarProperty Name="Cat_Publisher" ColumnName="Cat_Publisher" />
+          <ScalarProperty Name="Cat_Active" ColumnName="Cat_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetStudents">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetStudent">
+        <MappingFragment StoreEntitySet="AspNetStudents">
+          <ScalarProperty Name="Stu_Id" ColumnName="Stu_Id" />
+          <ScalarProperty Name="Stu_Fname" ColumnName="Stu_Fname" />
+          <ScalarProperty Name="Stu_Lname" ColumnName="Stu_Lname" />
+          <ScalarProperty Name="Stu_Bdate" ColumnName="Stu_Bdate" />
+          <ScalarProperty Name="Stu_Street" ColumnName="Stu_Street" />
+          <ScalarProperty Name="Stu_City" ColumnName="Stu_City" />
+          <ScalarProperty Name="Stu_Country" ColumnName="Stu_Country" />
+          <ScalarProperty Name="Stu_Gender" ColumnName="Stu_Gender" />
+          <ScalarProperty Name="Stu_Photo" ColumnName="Stu_Photo" />
+          <ScalarProperty Name="Stu_DateTime" ColumnName="Stu_DateTime" />
+          <ScalarProperty Name="Usr_Id" ColumnName="Usr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SPARKDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="SPARKDBModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SPARKDBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SPARKDBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SPARKDBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SPARKDBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SPARKDBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SPARKDBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SPARKDBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SPARKDBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SPARKDBModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="AspNetEmployees">
+      <EntityTypeMapping TypeName="SPARKDBModel.AspNetEmployee">
+        <MappingFragment StoreEntitySet="AspNetEmployees">
+          <ScalarProperty Name="Employee_Photo" ColumnName="Employee_Photo" />
+          <ScalarProperty Name="Employee_DateTime" ColumnName="Employee_DateTime" />
+          <ScalarProperty Name="Employee_Publisher" ColumnName="Employee_Publisher" />
+          <ScalarProperty Name="Employee_Active" ColumnName="Employee_Active" />
+          <ScalarProperty Name="Employee_Salary" ColumnName="Employee_Salary" />
+          <ScalarProperty Name="Employee_Phone" ColumnName="Employee_Phone" />
+          <ScalarProperty Name="Employee_Name" ColumnName="Employee_Name" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

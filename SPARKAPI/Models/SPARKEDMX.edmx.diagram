@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb029c59a8624f6bb947a8a21d62bbef" Name="Diagram1">
+        <EntityTypeShape EntityType="SPARKDBModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetCourseGroup" Width="1.5" PointX="12.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetCourseGroupsInstructor" Width="1.5" PointX="15" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetCourseGroupsTime" Width="1.5" PointX="15" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetCourseLesson" Width="1.5" PointX="8.25" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetCours" Width="1.5" PointX="10.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetCoursesCategory" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetEvent" Width="1.5" PointX="5.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetEventsAcception" Width="1.5" PointX="7.5" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetEventsCat" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetInstructor" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetInstructorsCat" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetJob" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetJobsCategory" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetManager" Width="1.5" PointX="5.25" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetNew" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetNewsAcception" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetNewsCategory" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetProgrameCourseGroup" Width="1.5" PointX="12" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetProgrameCourseGroupsInstructor" Width="1.5" PointX="14.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetProgrameCourseGroupsTime" Width="1.5" PointX="14.25" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetProgrameCours" Width="1.5" PointX="9.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetProgrameCoursesInstructor" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetProgrameCoursesLesson" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetPrograme" Width="1.5" PointX="7.5" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetProgrammesCategory" Width="1.5" PointX="5.25" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetRole" Width="1.5" PointX="0.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetStudent" Width="1.5" PointX="5.25" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetUser" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPARKDBModel.sysdiagram" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetCourseGroups_AspNetCourseGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetCourseGroupsInstructors_AspNetCourseGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetCourseGroupsTimes_AspNetCourseGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetCourseLessons_AspNetCourses" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetCourseLessons_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetCourses_AspNetCoursesCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetCourses_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetCoursesCategories_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetProgrameCourses_AspNetCoursesCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetEvents_AspNetEventsCats" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetEvents_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetEventsAcception_AspNetEvents" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetInstructors_AspNetInstructorsCats" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetJobs_AspNetJobsCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetManagers_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetNews_AspNetNews" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetNews_AspNetNewsCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetProgrameCourseGroups_AspNetProgrameCourses" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetProgrameCourseGroupsInstructors_AspNetProgrameCourseGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetProgrameCourseGroupsTimes_AspNetProgrameCourseGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetProgrameCourses_AspNetProgrames" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetProgrames_AspNetProgrames" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetProgrames_AspNetProgrammesCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetProgrammesCategories_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetStudents_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetJobs_AspNetUsers" />
+        <EntityTypeShape EntityType="SPARKDBModel.AspNetEmployee" Width="1.5" PointX="5.25" PointY="3.25" />
+        <AssociationConnector Association="SPARKDBModel.FK_AspNetEmployees_AspNetUsers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
